@@ -5,7 +5,7 @@ import java.time.LocalTime;
 public class Homework_6 {
     public static void main(String[] args) {
         LocalDate publishDate = LocalDate.now().minusDays(0);
-        LocalTime publishTime = LocalTime.now().minusHours(1);
+        LocalTime publishTime = LocalTime.now().minusMinutes(60);
         LocalDateTime timestamp = LocalDateTime.of(publishDate, publishTime);
 
         //LocalDateTime timestamp = LocalDateTime.of(2015, 01, 21, 20, 50);
@@ -14,5 +14,5 @@ public class Homework_6 {
         System.out.println("Результат работы программы: " + HumanReadableTimestampClass.getTimestamp(timestamp));
     }
 
-    // учесть нюанс с переходом дат
+    //todo: учесть нюанс с переходом дат - скорее всего покрывается использованием Duration
 }
