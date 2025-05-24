@@ -8,7 +8,11 @@ public class Homework_6 {
         LocalTime publishTime = LocalTime.now().minusMinutes(10);
         LocalDateTime timestamp = LocalDateTime.of(publishDate, publishTime);
 
+        //LocalDateTime timestamp = LocalDateTime.of(2015, 01, 21, 20, 50);
+
         System.out.println("Исходный timestamp: " + timestamp);
         System.out.println("Результат работы программы: " + HumanReadableTimestampClass.getTimestamp(timestamp));
     }
+
+    // учесть нюанс с переходом дат
 }
