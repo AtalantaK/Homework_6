@@ -1,5 +1,7 @@
 import java.time.LocalDateTime;
 
 public interface HumanReadableTimestamp {
-    String getTimestamp(LocalDateTime eventTimestamp);
+    static String getTimestamp(LocalDateTime eventTimestamp) {
+        return null;
+    }
 }

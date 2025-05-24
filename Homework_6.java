@@ -4,10 +4,11 @@ import java.time.LocalTime;
 
 public class Homework_6 {
     public static void main(String[] args) {
-        LocalDate publishDate = LocalDate.now().minusDays(1);
-        LocalTime publishTime = LocalTime.now().minusHours(5);
+        LocalDate publishDate = LocalDate.now().minusDays(0);
+        LocalTime publishTime = LocalTime.now().minusMinutes(10);
         LocalDateTime timestamp = LocalDateTime.of(publishDate, publishTime);
 
-        System.out.println(timestamp);
+        System.out.println("Исходный timestamp: " + timestamp);
+        System.out.println("Результат работы программы: " + HumanReadableTimestampClass.getTimestamp(timestamp));
     }
 }
