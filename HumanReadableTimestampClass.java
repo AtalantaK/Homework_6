@@ -5,12 +5,15 @@ import java.time.Month;
 public class HumanReadableTimestampClass implements HumanReadableTimestamp {
 
     public static String getTimestamp(LocalDateTime eventTimestamp) {
+
+        //фиксируем текущую дату
         LocalDateTime currentTimestamp = LocalDateTime.now();
 
+        //определяем разницу между текущей датой и датой переданной в функцию
         Duration timeDifference = Duration.between(currentTimestamp, eventTimestamp);
 
-        //int yearDifference = currentTimestamp.getYear() - eventTimestamp.getYear();
-        //int monthDifference = currentTimestamp.getMonthValue() - eventTimestamp.getMonthValue();
+        //вычисляем разницу в днях, часах, минутах между текущей датой и датой переданной в функцию
+        //для корректного отображения умножаем на -1
         int dayDifference = (int) timeDifference.toDays()*(-1);
         int hourDifference = (int) timeDifference.toHours()*(-1);
         int minuteDifference = (int) timeDifference.toMinutes()*(-1);
