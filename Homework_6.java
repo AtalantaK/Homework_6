@@ -5,7 +5,7 @@ import java.time.LocalTime;
 public class Homework_6 {
     public static void main(String[] args) {
         LocalDate publishDate = LocalDate.now().minusDays(0);
-        LocalTime publishTime = LocalTime.now().minusMinutes(10);
+        LocalTime publishTime = LocalTime.now().minusHours(1);
         LocalDateTime timestamp = LocalDateTime.of(publishDate, publishTime);
 
         //LocalDateTime timestamp = LocalDateTime.of(2015, 01, 21, 20, 50);
