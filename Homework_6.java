@@ -4,8 +4,9 @@ import java.time.LocalTime;
 
 public class Homework_6 {
     public static void main(String[] args) {
-        LocalDate publishDate = LocalDate.now().minusDays(0);
-        LocalTime publishTime = LocalTime.now().minusMinutes(60);
+        LocalDate publishDate = LocalDate.now().minusDays(1);
+        LocalTime publishTime = LocalTime.now().minusHours(1);
+//        LocalTime publishTime = LocalTime.now().minusMinutes(60);
 
         LocalDateTime timestamp = LocalDateTime.of(publishDate, publishTime);
 
