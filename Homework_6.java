@@ -4,17 +4,39 @@ import java.time.LocalTime;
 
 public class Homework_6 {
     public static void main(String[] args) {
-        LocalDate publishDate = LocalDate.now().minusDays(1);
-        LocalTime publishTime = LocalTime.now().minusHours(1);
-//        LocalTime publishTime = LocalTime.now().minusMinutes(60);
 
+        LocalDate publishDate = LocalDate.now();
+        LocalTime publishTime = LocalTime.now();
         LocalDateTime timestamp = LocalDateTime.of(publishDate, publishTime);
+        System.out.println("\nИсходный timestamp: " + timestamp + ". "
+                + HumanReadableTimestampClass.getTimestamp(timestamp) + "\n");
 
-        //LocalDateTime timestamp = LocalDateTime.of(2015, 01, 21, 20, 50);
+        //Проверяем смещение в днях
+        for (int i = 1; i < 200; i++) {
+            publishDate = LocalDate.now().minusDays(i);
+            timestamp = LocalDateTime.of(publishDate, publishTime);
+            System.out.println("Смещение в днях: " + i + ". " + HumanReadableTimestampClass.getTimestamp(timestamp));
+        }
+        System.out.println();
 
-        System.out.println("Исходный timestamp: " + timestamp);
-        System.out.println("Результат работы программы: " + HumanReadableTimestampClass.getTimestamp(timestamp));
+        //Проверяем смещение в часах
+        for (int i = 1; i < 24; i++) {
+            publishDate = LocalDate.now();
+            publishTime = LocalTime.now().minusHours(i);
+            timestamp = LocalDateTime.of(publishDate, publishTime);
+            System.out.println("Смещение в часах: " + i + ". " + HumanReadableTimestampClass.getTimestamp(timestamp));
+        }
+        System.out.println();
+
+        //Проверяем смещение в минутах
+        for (int i = 1; i < 60; i++) {
+            publishDate = LocalDate.now();
+            publishTime = LocalTime.now().minusMinutes(i);
+            timestamp = LocalDateTime.of(publishDate, publishTime);
+            System.out.println("Смещение в минутах: " + i + ". " + HumanReadableTimestampClass.getTimestamp(timestamp));
+        }
+        System.out.println();
+
+
     }
-
-    //todo: учесть нюанс с переходом дат - скорее всего покрывается использованием Duration
 }
